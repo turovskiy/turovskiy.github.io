@@ -6,7 +6,6 @@ $(function(){
             backDelay: 1500,
             startDelay: 2500,
             loop: true,
-            loopCount: 2,
             contentType: 'html',      
         });
 
