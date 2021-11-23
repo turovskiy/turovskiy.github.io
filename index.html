@@ -1,19 +1,344 @@
 <!DOCTYPE html>
-<html lang="uk">
-<head>
-  <meta charset="utf-8">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.4/typed.min.js"></script>
-  <script src="main.js"></script>
-   <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<html lang="en">
+	<head>
+		<title>Turovskiy web developer</title>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=5.0"/>
+    <meta name="description" content="website made with💟by alexturik''"/>
+    <meta name="theme-color" content="#141414"/>
+		<link type="text/css" rel="stylesheet" href="./styles/main.css"/>
+		<link type="text/css" rel="stylesheet" href="./styles/slider.css"/>
+		<link type="text/css" rel="stylesheet" href="./styles/components.css"/>
+    <link rel="icon" type="image/png" href="./resources/images/favicon.ico"/>
+	</head>
+	<body>
+    <!-- MAIN UI ELEMENTS -->
+    <main class="ui-wrapper page-not-loaded">
+      <!-- LOADER -->
+      <div class="loader flex flex--center">
+        <span class="loader__text">Turovskiy</span>
+      </div>
+      <!-- MAIN MENU -->
+      <div class="menu">
+        <ul class="menu-list">
+          <li class="menu-list__item" data-page="1">ABOUT</li>
+          <li class="menu-list__item" data-page="2">MY SKILLS</li>
+          <li class="menu-list__item" data-page="3">BIO</li>
+          <li class="menu-list__item" data-page="4">PROJECTS</li>
+          <li class="menu-list__item" data-page="5">CONTACTS</li>
+        </ul>
+      </div>
+      <!-- VIDEO POPUP -->
+      <div class="popup" data-popup="video">
+        <div class="popup__inner video__inner">
+          <iframe id="video" width="100%" height="100%" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+          <!-- If you have Youtube video or any external video, use iframe above. Otherwise use video element below; -->
+          <!-- <video id="video" src="./path-to-video"></video> -->
+        </div>
+      </div>
+      <!-- OFFERS POPUP -->
+      <div class="popup" data-popup="offers">
+        <div class="popup__inner">
+          <h2 class="popup__title">WHAT MY OFFER</h2>
+          <h2 class="popup__subtitle">Some of the things  do</h2>
+          <div class="popup__content popup__offers">
+            <div class="popup__offer">
+              <h3 class="popup__offer-title">Marketing</h3>
+              <ul>
+                <li>Facbook ads</li>
+                <li>Instagram ads</li>
+                <li>Google ads</li>
+                <li>Leaflet</li>
+              </ul>
+            </div>
+            <div class="popup__offer">
+              <h3 class="popup__offer-title">Analytics</h3>
+              <ul>
+                <li>Google Analytics</li>
+                <li>Firebase</li>
+                <li>Data science</li>
+                <li>Dashboard</li>
+              </ul>
+            </div>
+            <div class="popup__offer">
+              <h3 class="popup__offer-title">Consulting</h3>
+              <ul>
+                <li>Growth</li>
+                <li>First business</li>
+                <li>Startup</li>
+              </ul>
+            </div>
+            <div class="popup__offer">
+              <h3 class="popup__offer-title">Research</h3>
+              <ul>
+                <li>Market research</li>
+                <li>Competition reserach</li>
+                <li>Product reserach</li>
+              </ul>
+            </div>
+            <div class="popup__offer">
+              <h3 class="popup__offer-title">Developing</h3>
+              <ul>
+                <li>WEB Design</li>
+                <li>WEB apps</li>
+                <li>Mobile apps</li>
+                <li>Smart home apps</li>
+              </ul>
+            </div>
+            <div class="popup__offer">
+              <h3 class="popup__offer-title">Product growing</h3>
+              <ul>
+                <li>Influencers</li>
+                <li>Invests</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- TEAM POPUP -->
+      <div class="popup" data-popup="team">
+        <div class="popup__inner">
+          <h2 class="popup__title">PEOPLE BEHIND THIS</h2>
+          <h3 class="popup__subtitle">Good company does not exist without good people</h3>
+          <div class="slider">
+            <div class="slider__arrow slider__arrow-left slider__arrow--disabled" data-follow="centered_y">
+              <img class="slider__arrow-icon" src="./resources/images/icons/arrow.svg" alt="Arrow icon" />
+            </div>
+            <div class="slider__arrow slider__arrow-right" data-follow="centered_y">
+              <img class="slider__arrow-icon" src="./resources/images/icons/arrow.svg" alt="Arrow icon" />
+            </div>
+            <div class="slider__inner" id="slider">
+              <div class="slider__item">
+                <img class="slider__item-image" src="./resources/images/persons/person1.jpg" alt="Team photo" />
+                <div class="slider__item-content">
+                  <h2 class="slider__item-name">John Johnson</h2>
+                  <h2 class="slider__item-position">CEO</h2>
+                </div>
+              </div>
+              <div class="slider__item">
+                <img class="slider__item-image" src="./resources/images/persons/person2.jpg" alt="Team photo" />
+                <div class="slider__item-content">
+                  <h2 class="slider__item-name">Ann Harling</h2>
+                  <h2 class="slider__item-position">CTO</h2>
+                </div>
+              </div>
+              <div class="slider__item">
+                <img class="slider__item-image" src="./resources/images/persons/person3.jpg" alt="Team photo" />
+                <div class="slider__item-content">
+                  <h2 class="slider__item-name">Margarit Pitersen</h2>
+                  <h2 class="slider__item-position">HR</h2>
+                </div>
+              </div>
+              <div class="slider__item">
+                <img class="slider__item-image" src="./resources/images/persons/person4.jpg" alt="Team photo" />
+                <div class="slider__item-content">
+                  <h2 class="slider__item-name">Harold Smith</h2>
+                  <h2 class="slider__item-position">MARKETING</h2>
+                </div>
+              </div>
+              <div class="slider__item">
+                <img class="slider__item-image" src="./resources/images/persons/person5.jpg" alt="Team photo" />
+                <div class="slider__item-content">
+                  <h2 class="slider__item-name">David Sumer</h2>
+                  <h2 class="slider__item-position">PRODUCT</h2>
+                </div>
+              </div>
+              <div class="slider__item">
+                <img class="slider__item-image" src="./resources/images/persons/person6.jpg" alt="Team photo" />
+                <div class="slider__item-content">
+                  <h2 class="slider__item-name">Jenifer Turdlo</h2>
+                  <h2 class="slider__item-position">DEVELOPER</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ALL FIXED CONTENT (EG. HEADER, FOOTER) -->
+      <!-- HEADER -->
+      <header class="fixed-content-header">
+        <div class="flex flex--center">
+          <div class="burger" data-follow>
+            <div class="burger__line"></div>
+            <div class="burger__line"></div>
+            <div class="burger__line"></div>
+          </div>
+          <div class="fixed-content-header__logo">Turovskiy</div>
+        </div>
+        <button class="fixed-content-header__contact button button--primary" data-follow data-page="5">CONTACT</button>
+      </header>
+      <!-- PAGING -->
+      <div class="fixed-content-paging">
+        <div class="paging__page" data-page="0"></div>
+        <div class="paging__page section--hidden" data-page="1"></div>
+        <div class="paging__page section--hidden" data-page="2"></div>
+        <div class="paging__page section--hidden" data-page="3"></div>
+        <div class="paging__page section--hidden" data-page="4"></div>
+        <div class="paging__page section--hidden" data-page="5"></div>
+      </div>
+      <!-- FOOTER -->
+      <div class="fixed-content-footer">
+        <div class="social-links">
+          <a class="social-links__anchor" href="">
+            <img class="social-links__image" src="./resources/images/socials/facebook.svg" alt="Facebook logo" width="20" height="20">
+          </a>
+          <a class="social-links__anchor" href="">
+            <img class="social-links__image" src="./resources/images/socials/twitter.svg" alt="Twitter logo" width="20" height="20">
+          </a>
+          <a class="social-links__anchor" href="">
+            <img class="social-links__image" src="./resources/images/socials/instagram.svg" alt="Instagram logo" width="20" height="20">
+          </a>
+        </div>
+        <div class="fixed-content-footer__copy">
+          <span class="footer-copy__date"></span>
+          <span class="footer-copy__name">Trovskiy</span>
+        </div>
+      </div>
+      <!-- MAIN CONTENT -->
+      <div class="content">
+        <div class="content-section" data-page="0">
+          <div class="configuration__letters configuration__letters--hidden">
+            <span class="configuration__letters-text">Turovskiy</span>
+          </div>
+          <div class="scroll-letters">
+            <span class="scroll-letters__letter" title="a">a</span>
+            <span class="scroll-letters__letter" title="l">l</span>
+            <span class="scroll-letters__letter" title="e">e</span>
+            <span class="scroll-letters__letter" title="x">x</span>
+            <span class="scroll-letters__letter" title="t">t</span>
+            <span class="scroll-letters__letter" title="u">u</span>
+            <span class="scroll-letters__letter" title="r">r</span>
+            <span class="scroll-letters__letter" title="i">i</span>
+            <span class="scroll-letters__letter" title="k">k</span>
+          
+          </div>
+        </div>
+        <div class="content-section section--hidden" data-page="1">
+          <h1 class="content-section__title">
+            ABOUT 
+            </h1>
+          <p class="content-section__text">
+           
+            <span class="emphasize">
+              Hi! I'm Alex, a full stack web developer specializing in PHP, Javascript, and CSS. I love finding efficient solutions to complicated problems and automating as many tasks as possible.
+              </span>
+              </p>
+              
+          <button class="content-section__button button button--icon" id="button_video">
+            <img class="button__image" src="./resources/images/icons/play.svg" alt="Play icon"/>
+            <span class="button__text">WATCH VIDEO</span>
+          </button>
+          
+        </div>
+        <div class="content-section section--hidden" data-page="2">
+          <h1 class="content-section__title">WHAT MY OFFER</h1>
+          <p class="content-section__text">
+            Innovative and task-driven professional web developer with over four years’ experience in designing, developing, and deploying web applications, interfaces, testing, debugging, and end user-training in a collegiate environment. Proven ability in optimizing web functionalities that improve workflow efficiencies and increase the effectiveness of business applications and data retrieval.
+              <div class="content-services">
+            <div class="content-services__service">
+              <img class="content-service__image" src="./resources/images/icons/marketing.svg" alt="Marketing icon" />
+              <span class="content-service__text">Marketing</span>
+              <ul class="extended-services">
+                <li class="extended-services__service">SEO</li>
+                <li class="extended-services__service">Linear</li>
+                <li class="extended-services__service">Public</li>
+                <li class="extended-services__service">Comercial</li>
+              </ul>
+            </div>
+            <div class="content-services__service">
+              <img class="content-service__image" src="./resources/images/icons/analytics.svg" alt="Marketing icon" />
+              <span class="content-service__text">Analytics</span>
+              <ul class="extended-services">
+                <li class="extended-services__service">SEO</li>
+                <li class="extended-services__service">Linear</li>
+                <li class="extended-services__service">Public</li>
+                <li class="extended-services__service">Comercial</li>
+              </ul>
+            </div>
+            <div class="content-services__service">
+              <img class="content-service__image" src="./resources/images/icons/consulting.svg" alt="Marketing icon" />
+              <span class="content-service__text">Consulting</span>
+              <ul class="extended-services">
+                <li class="extended-services__service">SEO</li>
+                <li class="extended-services__service">Linear</li>
+                <li class="extended-services__service">Public</li>
+                <li class="extended-services__service">Comercial</li>
+              </ul>
+            </div>
+            <div class="content-services__service">
+              <img class="content-service__image" src="./resources/images/icons/research.svg" alt="Marketing icon" />
+              <span class="content-service__text">Research</span>
+              <ul class="extended-services">
+                <li class="extended-services__service">SEO</li>
+                <li class="extended-services__service">Linear</li>
+                <li class="extended-services__service">Public</li>
+                <li class="extended-services__service">Comercial</li>
+              </ul>
+            </div>
+          </div>
+          <button class="content-section__button button button--secondary" id="button_offers">VIEW ALL SERVICES</button>
+        </div>
+        <div class="content-section section--hidden content-section--left-align" data-page="3">
+          <div class="content-holder--left-align">
+            <h1 class="content-section__title">MEET THE TEAM</h1>
+            <p class="content-section__text text-indent content-section__text-team">Companies can't survive without smart people running them. We have some of the most highly passionate individuals with a vision for your success. Not all heroes wear capes. Check out the people of tomorrow today.</p>
+            <button class="content-section__button button button--secondary" id="button_team">VIEW TEAM</button>
+          </div>
+          <div class="content-section__images">
+            <div class="content-section__image-holder">
+              <img class="content-section__image" src="./resources/images/persons/person1.jpg" alt="Team photo" />
+            </div>
+            <div class="content-section__image-holder">
+              <img class="content-section__image" src="./resources/images/persons/person2.jpg" alt="Team photo" />
+            </div>
+            <div class="content-section__image-holder">
+              <img class="content-section__image" src="./resources/images/persons/person3.jpg" alt="Team photo" />
+            </div>
+            <div class="content-section__image-holder">
+              <img class="content-section__image" src="./resources/images/persons/person4.jpg" alt="Team photo" />
+            </div>
+          </div>
+        </div>
+        <div class="content-section section--hidden" data-page="4">
+          <h1 class="content-section__title">PORTFOLIO</h1>
+          <p class="content-section__text">We are proud of our work. With over 200 happy customers we are eager to show you the art that we produce. Check out our portfolio below.</p>
+          <div class="content-portfolio__images flex">
+            <div class="content-portfolio__image-holder">
+              <span class="content-portfolio__name text-indent">Mobile Design</span>
+              <img class="content-portfolio__image" src="./resources/images/portfolio/portfolio1.jpg" alt="Portfolio image" />
+            </div>
+            <div class="content-portfolio__image-holder">
+              <span class="content-portfolio__name text-indent">Web Design</span>
+              <img class="content-portfolio__image" src="./resources/images/portfolio/portfolio2.jpg" alt="Portfolio image" />
+            </div>
+            <div class="content-portfolio__image-holder">
+              <span class="content-portfolio__name text-indent">Advanced Animations</span>
+              <img class="content-portfolio__image" src="./resources/images/portfolio/portfolio3.jpg" alt="Portfolio image" />
+            </div>
+          </div>
+          <a class="content-section__button button button--icon" href="https://github.com/" rel="noopener">
+            <span class="button__text">VIEW PORTFOLIO</span>
+            <img class="button__image" src="./resources/images/icons/external.svg" alt="External icon"/>
+          </a>
+        </div>
+        <div class="content-section section--hidden" data-page="5">
+          <h1 class="content-section__title">CONTACT US</h1>
+          <p class="content-section__text">We’re here to help and answer any question you might have. We look forward to hearing from you. You can also find us on social media below.</p>
+          <div class="content-section__buttons-holder">
+            <a class="content-section__button button button--icon" href="mailto:YOUREMAILHERE">
+              <img class="button__image" src="./resources/images/icons/email.svg" alt="Email icon"/>
+              <span class="button__text">EMAIL US</span>
+              <span class="button__invisible-email">youremail@here.com</span>
+            </a>
+            <a class="content-section__button button button--icon" href="tel:+0011223344">
+              <img class="button__image" src="./resources/images/icons/phone.svg" alt="Phone icon"/>
+              <span class="button__text">CALL US</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
 
-<div class="box">
- <div class="top-text">
-       <h1>Предлагаем комплесные решения для Вашего бизнеса <br><span id="typing"></span></h1>
-   </div>  
-  </div>
-
-</body>
+    <script type="module" src="./main.js"></script>
+	</body>
 </html>

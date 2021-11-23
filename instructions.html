@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title>Instructions</title>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=5.0"/>
+  <meta name="description" content="Author: 3Designs, Category: 3D Webdesign"/>
+  <body>
+    <span><small><sub>version 1.2.0</sub></small></span>
+    <h1>Thank you for purchasing VICTOR 3D Website Template</h1><br>
+    
+    <h2><b>Brief Description:</b></h2>
+    <p>VICTOR – is one of a kind unique 3D Company Landing Page or Portfolio HTML template.
+      It features a fully 3D environment with your Company name, Personal name, or just about any other text motive.
+      Using top-notch web technologies we managed to create an immersive experience for your visitors so you can step up
+      and be different from others.</p>
+    
+    <h2><b>Project Files</b></h2>
+    <p>This project is divided into few directories.</p>
+    <ul>
+      <li>ext <span>(external files line three.js and tween.js, which are used to display 3D scene and its animation)</span></li>
+      <li>resources 
+        <ul>
+          <li>fonts <span>(all fonts in the application)</span></li>
+          <li>images <span>(all images in the application)</span></li>
+        </ul>
+      </li>
+      <li>styles <span>(all CSS files for styling)</span></li>
+      <li><code>index.html</code> <span>(main structure file)</span></li>
+      <li><code>main.js</code> <span>(main JavaScript logic file)</span></li>
+      <li><code>slider.js</code> <span>(JavaScript file for custom slider)</span></li>
+      <li><code>ui.js</code> <span>(JavaScript file for controlling UI elements)</span></li>
+      <li><code>instructions.html</code> <span>(this file)</span></li>
+    </ul>
+
+    <h2><b>Running the website</b></h2>
+    <p>To view this website you need to upload it to your web server.</p>
+    <p>If you want to view it locally on your PC before you go to production, you need to start your local web server. The easiest way you
+      can do that is by installing <a href="https://code.visualstudio.com/"><i>Visual Studio Code</i></a> (code editor) and after that install
+      <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer"><i>Live Server</i></a> extension for that code editor. 
+      When you finish installing those things, open Victor project files with Visual Studio code, find <code>index.html</code> file
+      on the left side (file explorer) and right click and press <i>Open with Live Server</i>. Your browser will open with website avaiable.
+      Now you can change anything you want and see the result live. </p>
+
+    <h2><b>Configurations</b></h2>
+    <p>Any configurations you need are in files <code>index.html</code>, <code>main.css</code> and <code>main.js</code></p>
+
+    <h2><b>Configuration Properties</b></h2>
+    <p>First, we will start with some basic configuration changes like Website name and colors.</p>
+    <p>To change your Website name find next tags and rename them from VICTOR to your name:</p>
+    <ul>
+      <li>title tag in <code>index.html</code> (line 4)</li>
+      <li>loader text in <code>index.html</code> (line 19)</li>
+      <li>fixed-content-header__logo text in <code>index.html</code> (line 168)</li>
+      <li>main 3D letter text in <code>main.js</code> configuration on top (line 3)</li>
+      <li>2D text if you chose to show 2D over 3D text in <code>index.html</code> (line 201) <small><sup>NEW</sup></small></li>
+    </ul>
+
+    <p>To change your Website colors find next tags and change to colors you desire <b>Note: Use hex color only</b>:</p>
+    <ul>
+      <li>in <code>main.css</code> (lines from 33 - 38)</li>
+      <li>in <code>main.js</code> configuration on top in the colors section (lines from 7 - 11)</li>
+    </ul>
+
+    <p>If you desire you can change ammount of dots and vertical lines that are genereted <b>Note: If you go to high, it might affect your website performance</b>:</p>
+    <ul>
+      <li>in <code>main.js</code> change NumberOfVerticalLines (line 4). Default value is 25.</li>
+      <li>in <code>main.js</code> change NumberOfDots (line 5). Default value is 5000.</li>
+    </ul>
+
+    <h3>Structural Configuration</h3>
+    <p>All of the structural changes (eg. Images, Texts, buttons...) should be done in <code>index.html</code></p>
+    <figure>
+      <img src="./resources/instructions/instructions-content-section.png" alt="Instructions image #1" />
+      <figcaption><small>All content is diveded into <code>content-section divs</code></small></figcaption>
+    </figure>
+    <figure>
+      <img src="./resources/instructions/instructions-popups.png" alt="Instructions image #2" />
+      <figcaption><small>All popups are diveded into <code>popup divs</code></small></figcaption>
+    </figure>
+    <p>Every content section div consists of texts and images you can change.</p>
+    <p><b>TIPS:</b> Go from top to bottom of <code>index.html</code> and change all the text and images for your own.</p>
+    <br>
+
+    <h2>Additional Help</h2>
+    <p>If you have any questions or hard times, feel free to contact us at any time on our page 3Designs at Template Monster website.</p>
+
+    <h2>Links</h2>
+    <a href="https://www.templatemonster.com/">Template Monster</a>
+
+    <h2>Change log</h2>
+    <span>version 1.2.0</span>
+    <ul>
+      <li>Fixed template not loading on Safari version 13.1 and below;</li>
+      <li>Fixed 'SCROLL' text not beeing visible;</li>
+      <li>Added new configuration option to scale down or up main 3D text;</li>
+      <li>Added new configuration option to chose between 3D text and 2D text;</li>
+    </ul>
+  </body>
+</html>
+
+<style>
+  body {
+    max-width: 1500px;
+    padding: 50px 5%;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2em;
+  }
+</style>
