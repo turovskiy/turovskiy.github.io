@@ -1,3 +1,4 @@
+//імпорт слайдера
 import Slider from './slider.js'
 
 const uiWrapper = document.querySelector('.ui-wrapper')
@@ -10,7 +11,7 @@ let followElementsPositions = []
 let videoElementSource = ''
 let slider = null
 let popup = null
-
+// 
 export default class UI {
   constructor (callback) {
     constructorCb = callback
@@ -23,7 +24,7 @@ export default class UI {
       { selector: '.fixed-content-header__contact', cb: this.onPagingClick.bind(this) },
       { selector: '.fixed-content-paging', cb: this.onPagingClick.bind(this) },
       { selector: '.menu-list', cb: this.onMenuPagingClick.bind(this) },
-      { selector: '#button_video', cb: this.showPopup.bind(this, 'video', this.initVideo, this.destoryVideo) },
+      // { selector: '#button_video', cb: this.showPopup.bind(this, 'video', this.initVideo, this.destoryVideo) },
       { selector: '#button_offers', cb: this.showPopup.bind(this, 'offers') },
       { selector: '#button_team', cb: this.showPopup.bind(this, 'team', this.initSlider, this.destroySlider) }
     ]
@@ -33,7 +34,7 @@ export default class UI {
     })
 
     const footerYear = uiWrapper.querySelector('.footer-copy__date')
-    footerYear.innerHTML = `© ${new Date().getFullYear()}`
+    footerYear.innerHTML = `${new Date().getFullYear()}`
   }
 
   ui_moveEvent (e, Use2DTextOver3D) {
@@ -49,13 +50,13 @@ export default class UI {
     let elementAlreadyCentered = { y: false }
     followElements.forEach((element, index) => {
       const elementPositions = followElementsPositions[index]
-      // If cursor is close to the button element then move the button closer to the cursor;
+      // Якщо курсор близько до елемента кнопки, то переміщаю кнопку ближче до курсора;
       if (mouseLeft > elementPositions.left - 100 && mouseLeft < elementPositions.right + 100 && 
           mouseTop > elementPositions.top - 100 && mouseTop < elementPositions.bottom + 100) {
         const moveX = (elementPositions.left - mouseLeft) / 10
         const moveY = (elementPositions.top - mouseTop) / 10
 
-        // If moved element already has some kind of centering set, add that position to calc;
+        // Якщо переміщений елемент вже має певний центр централізації, додаю цю позицію до Calc;
         elementAlreadyCentered.y = false
         if (element.dataset.follow === 'centered_y') {
           elementAlreadyCentered.y = true
@@ -84,7 +85,7 @@ export default class UI {
     if (typeof createCallback === 'function') createCallback() 
     popup = uiWrapper.querySelector(`[data-popup=${popupType}]`)
     popup.classList.add('popup--active')
-    // First remove display: none, then add animated class;
+    // Спочатку видаляю сховані, а потім додаю анімований клас;
     setTimeout(() => {
       popup.classList.add('popup--animated')
       popup.addEventListener('click', this.hidePopup)
@@ -158,7 +159,7 @@ export default class UI {
   checkContentVisibility (direction) {
     const contentSections = uiWrapper.querySelectorAll('[data-page]')
     const animateSection = section => {
-      // Add different class depending on scroll direction.
+      //Додаю інший клас залежно від напрямку прокрутки.
       if (direction === 'down')  {
         section.classList.add('section--hidden')
         section.classList.remove('section--hidden-reverse')
@@ -176,14 +177,14 @@ export default class UI {
       }
     }
 
-    // For each section first hide them all then show active.
+    // Для кожного розділу спочатку ховаю його, а потім показую активним.
     contentSections.forEach(section => {
-      // Set low opacity on section that is leaving.
-      // Transition is set in (main.css).
+      // Встановлюю низьку непрозорість на розділі.
+      //Перехід встановлюється в файлі (main.css).
       section.style.opacity = '0'
-      // Set timeout for the transition to end.
+      // Встановлюю тайм-аут для переходу до кінця.
       setTimeout(() => {
-        // Remove style tag with opacity and display property.
+        // Видаляю тег стилю з непрозоростю та відображення властивості.
         section.removeAttribute('style')
         animateSection(section)
       }, 300)

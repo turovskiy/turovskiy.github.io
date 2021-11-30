@@ -1,14 +1,14 @@
 //// Main site configuration. ////
 const configuration = {
   SiteName: 'Turovskiy',
-  Use2DTextOver3D: false, // Change to true if you want 2D over 3D
-  SiteNameSize: 0.7, // Between 0 and +
+  Use2DTextOver3D: false, //Змінити на TRUE, якщо ви хочу 2D
+  SiteNameSize: 0.7, // Між 0 та +
   NumberOfVerticalLines: 25,
   NumberOfDots: 5000,
   colors: {
     CanvasBackgroundColor: '#141414',
-    LettersColor: '#FF0000',
-    LinesColors: ['#FFF', '#FF0000', '#7d7d7d'],
+    LettersColor: '#002aff',
+    LinesColors: ['#FFF', '#002aff', '#7d7d7d'],
     LowerLinesColors: ['#3d3d3d'],
     DotsColor: '#7d7d7d'
   }
@@ -16,13 +16,13 @@ const configuration = {
 ///////////////////////////////
 
 
-// Import all needed dependencies.
+// Імпортую всі необхідні залежності.
 import * as THREE from './ext/three.module.min.js'
 import TWEEN from './ext/tween.js'
 import UI from './ui.js'
 
-// Initialize UI thread. All UI scripting should be done
-// in this instance.
+// Ініціалізація інтерфейсу.Всі сценаріїв інтерфейсу слід зробити
+//У цьому випадку.
 const ui = new UI(uiCallback)
 
 const windowHeightInRadians = 25
@@ -35,7 +35,8 @@ let mainLettersMesh
 
 let touchStartPosition
 
-// Wait for page to load
+// 
+
 window.addEventListener('load', () => {
   const uiWrapper = document.querySelector('.ui-wrapper')
   uiWrapper.classList.remove('page-not-loaded')
@@ -99,9 +100,9 @@ function render (time) {
   renderer.render(scene, camera)
 }
 
-// **** HELPER FUNCTIONS **** //
+// **** Допоміжні функції **** //
 
-// Generate main geometries by random width, height, color and position.
+// Створюю основні геометрії випадковою шириною, висотою, кольором та положенням.
 function generateRandomObject (verticalPosition, availableSizes, availableColors) {
   const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
 
@@ -125,7 +126,14 @@ function generateRandomObject (verticalPosition, availableSizes, availableColors
 function loadMainLetters () {
   const fontLoader = new THREE.FontLoader()
   fontLoader.load('resources/fonts/Roboto-Black-3d.json', font => {
-    let textGeometry = new THREE.TextGeometry(configuration.SiteName, { font: font, size: 5, height: 3, curveSegments: 3 })
+    let textGeometry = new THREE.TextGeometry(configuration.SiteName, { 
+      font: font, 
+      size: 5, 
+      height: 3, 
+      curveSegments: 3 
+    }
+    )
+    //центрую геометрію
     textGeometry.center()
 
     textGeometry.scale(configuration.SiteNameSize, configuration.SiteNameSize, configuration.SiteNameSize)
@@ -313,7 +321,7 @@ function uiCallback () {
   }
 }
 
-// **** EVENT FUNCTIONS **** //
+// **** Функції подій **** //
 
 function moveScene () {
   new TWEEN.Tween(scene.position)
@@ -335,7 +343,8 @@ function windowResize () {
 }
 
 function windowWheelOrTouch (e) {
-  // Limit scrolling to scroll only once in N milliseconds.
+  // 
+  
   if (timeoutActive) return
   timeoutActive = true
   setTimeout(() => { timeoutActive = false }, 1500)
