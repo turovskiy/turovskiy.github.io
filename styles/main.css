@@ -32,11 +32,11 @@
 :root {
   --primaryColor: #002aff;
   --primaryBoldColor: #af0202;
-  --primaryBlackColor: #9b0101;
+  --primaryBlackColor: #190eb6;
   --secondaryColor: #ffffff;
   --opaqueBackground: #000000e6;
   --mainCanvasBackground: #141414;
-  --primaryTextSize: 15px;
+  --primaryTextSize: 14px;
   --primaryTextSizeS: 10px;
   --letterSpacing: 5px;
   --radius: 4px;

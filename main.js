@@ -2,8 +2,8 @@
 const configuration = {
   SiteName: 'Turovskiy',
   Use2DTextOver3D: false, //Змінити на TRUE, якщо ви хочу 2D
-  SiteNameSize: 0.7, // Між 0 та +
-  NumberOfVerticalLines: 25,
+  SiteNameSize: 0.8, // Між 0 та +
+  NumberOfVerticalLines: 38,
   NumberOfDots: 5000,
   colors: {
     CanvasBackgroundColor: '#141414',
@@ -21,8 +21,8 @@ import * as THREE from './ext/three.module.min.js'
 import TWEEN from './ext/tween.js'
 import UI from './ui.js'
 
-// Ініціалізація інтерфейсу.Всі сценаріїв інтерфейсу слід зробити
-//У цьому випадку.
+// Ініціалізація інтерфейсу.Всі сценаріїв інтерфейсу слід зробити саме тут
+
 const ui = new UI(uiCallback)
 
 const windowHeightInRadians = 25
@@ -40,16 +40,25 @@ let touchStartPosition
 window.addEventListener('load', () => {
   const uiWrapper = document.querySelector('.ui-wrapper')
   uiWrapper.classList.remove('page-not-loaded')
-  // Loading animation lasts for 3s;
+  // Завантаження анімації триває 3s;
   setTimeout(() => {
     init()
     animate()
-  }, 3000)
+  }, 2000)
 })
 
 function init() {
-  camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 2, 20000)
-  camera.position.z = 20
+  camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 1, 20000)
+  /**
+   * PerspectiveCamera( fov : Number, aspect : Number, near : Number, far : Number )
+   * 
+   * fov — Camera frustum vertical field of view.
+   * aspect — Camera frustum aspect ratio.
+   * near — Camera frustum near plane.
+   * far — Camera frustum far plane.
+   * Разом вони визначають кут огляду камери.
+   */
+  camera.position.z = 25
 
   scene = new THREE.Scene()
   scene.background = new THREE.Color(configuration.colors.CanvasBackgroundColor)
