@@ -25,8 +25,8 @@ export default class UI {
       { selector: '.fixed-content-paging', cb: this.onPagingClick.bind(this) },
       { selector: '.menu-list', cb: this.onMenuPagingClick.bind(this) },
       // { selector: '#button_video', cb: this.showPopup.bind(this, 'video', this.initVideo, this.destoryVideo) },
-      { selector: '#button_offers', cb: this.showPopup.bind(this, 'offers') },
-      { selector: '#button_team', cb: this.showPopup.bind(this, 'team', this.initSlider, this.destroySlider) }
+      { selector: '#button_skills', cb: this.showPopup.bind(this, 'skills') },
+      { selector: '#button_team', cb: this.showPopup.bind(this, 'experience', this.initSlider, this.destroySlider) }
     ]
     events.forEach(event => {
       const element = uiWrapper.querySelector(event.selector)
@@ -80,7 +80,8 @@ export default class UI {
     const LettersYPosition = yCenter - e.clientY
     letters.style.transform = `rotateX(${-LettersXPosition / 50}deg) rotateY(${LettersYPosition / 50}deg) translateX(-50%)`
   }
-
+// функуія для показу модального вікна
+//
   showPopup (popupType, createCallback, destroyCallback) {
     if (typeof createCallback === 'function') createCallback() 
     popup = uiWrapper.querySelector(`[data-popup=${popupType}]`)
@@ -89,13 +90,13 @@ export default class UI {
     setTimeout(() => {
       popup.classList.add('popup--animated')
       popup.addEventListener('click', this.hidePopup)
-      // Add parameter to prototype, so listener can be removed;
+      // Додаю параметр до прототипу, тому слухач може бути видалений;
       popup._eventParameter = destroyCallback
       constructorCb().blockSceneScrolling(true)
       this.getFollowElementsPosition()
     }, 0)
   }
-
+// Ховаю модадку
   hidePopup (event) {
     if (event.target !== event.currentTarget) return
     popup.classList.remove('popup--active')
@@ -104,32 +105,32 @@ export default class UI {
     constructorCb().blockSceneScrolling(false)
     if (typeof popup._eventParameter === 'function') popup._eventParameter()
   }
-
+// Ініціалізую слайдер
   initSlider () {
     const sliderElement = uiWrapper.querySelector('#slider')
     const leftArrow = uiWrapper.querySelector('.slider__arrow-left')
     const rightArrow = uiWrapper.querySelector('.slider__arrow-right')
     slider = new Slider(sliderElement, leftArrow, rightArrow)
   }
-
+// Прибираю слайдер
   destroySlider () {
     slider.destroy()
     slider = null
   }
-
+// ініціалізую відео
   initVideo () {
     if (!videoElementSource) return
     const videoElement = document.querySelector('#video')
     videoElement.setAttribute('src', videoElementSource)
   }
-
+// прибираю відео
   destoryVideo () {
     const videoElement = document.querySelector('#video')
     videoElementSource = videoElement.src
-    // Remove src tag, because you can't stop video while in iFrame;
+    // Видаляю  тег SRC, тому не можна зупинити відео під час iframe;
     videoElement.removeAttribute('src')
   }
-
+// показую меню
   toggleMenu () {
     uiWrapper.classList.toggle('menu-opened')
     uiWrapper.querySelector('.burger').classList.toggle('burger--active')
@@ -155,7 +156,7 @@ export default class UI {
     followElementsPositions = []
     followElements.forEach(element => followElementsPositions.push(element.getBoundingClientRect()))
   }
-
+// Роблю контент видимим
   checkContentVisibility (direction) {
     const contentSections = uiWrapper.querySelectorAll('[data-page]')
     const animateSection = section => {
