@@ -207,6 +207,7 @@
           <div class="configuration__letters configuration__letters--hidden">
             <span class="configuration__letters-text">Turovskiy</span>
           </div>
+          <!-- анімовані літери -->
           <div class="scroll-letters">
             <span class="scroll-letters__letter" title="a">a</span>
             <span class="scroll-letters__letter" title="l">l</span>
@@ -220,15 +221,16 @@
           
           </div>
         </div>
+        <!-- перша сцена -->
         <div class="content-section section--hidden" data-page="1">
           <h1 class="content-section__title">
             ABOUT 
             </h1>
           <p class="content-section__text">
            
-            <span class="emphasize">
-              Hi! 🖐<br> I'm Alex, a <bold>full stack web developer</bold> specializing in<br> PHP, <br>Javascript, <br>and CSS. 
-              </span>
+            <!-- <span class="emphasize"> -->
+              Hi! 🖐<br> I'm Alex, a <bold>full stack web developer</bold> specializing in PHP, Javascript, and CSS. 
+              <!-- </span> -->
           
               </p>
               <p class="content-section__text">
@@ -246,59 +248,84 @@
           </button> -->
       
         </div>
+        <!-- друга сцена -->
         <div class="content-section section--hidden" data-page="2">
           <h1 class="content-section__title">MY SKILLS</h1>
-          <p class="content-section__text">
-            
-              <div class="content-services">
+          <p class="content-section__text"></p>        
+          <div class="content-services">
+            <!-- frontend -->
             <div class="content-services__service">
-              <img class="content-service__image" src="./resources/images/icons/marketing.svg" alt="Marketing icon" />
-              <span class="content-service__text">Marketing</span>
+              <img class="content-service__image" src="./resources/images/icons/frontend.svg" alt="Front-end icon" />
+              <span class="content-service__text">Frontend</span>
               <ul class="extended-services">
-                <li class="extended-services__service">SEO</li>
-                <li class="extended-services__service">Linear</li>
-                <li class="extended-services__service">Public</li>
-                <li class="extended-services__service">Comercial</li>
+                <li class="extended-services__service">HTML</li>
+                <li class="extended-services__service">CSS</li>
+                <li class="extended-services__service">JavaScript</li>
+                <li class="extended-services__service">Animations</li>
               </ul>
             </div>
-            <div class="content-services__service">
-              <img class="content-service__image" src="./resources/images/icons/analytics.svg" alt="Marketing icon" />
-              <span class="content-service__text">Analytics</span>
+             <!-- backend -->
+             <div class="content-services__service">
+              <img class="content-service__image" src="./resources/images/icons/backend.svg" alt="Backend icon" />
+              <span class="content-service__text">Backend</span>
               <ul class="extended-services">
-                <li class="extended-services__service">SEO</li>
-                <li class="extended-services__service">Linear</li>
-                <li class="extended-services__service">Public</li>
-                <li class="extended-services__service">Comercial</li>
+                <li class="extended-services__service">PHP</li>
+                <li class="extended-services__service">NodeJS</li>
+                <li class="extended-services__service">API</li>
+                <li class="extended-services__service">Webserver</li>
               </ul>
             </div>
+            <!-- design -->
             <div class="content-services__service">
-              <img class="content-service__image" src="./resources/images/icons/consulting.svg" alt="Marketing icon" />
-              <span class="content-service__text">Consulting</span>
+              <img class="content-service__image" src="./resources/images/icons/DESIGN.svg" alt="Design icon" />
+              <span class="content-service__text">Design</span>
               <ul class="extended-services">
-                <li class="extended-services__service">SEO</li>
-                <li class="extended-services__service">Linear</li>
-                <li class="extended-services__service">Public</li>
-                <li class="extended-services__service">Comercial</li>
+                <li class="extended-services__service">Figma</li>
+                <li class="extended-services__service">Photoshop</li>
+                <li class="extended-services__service">Illustrator</li>
+                <li class="extended-services__service">After Effects</li>
+                <li class="extended-services__service">Sketchup</li>
               </ul>
             </div>
+            <!-- databases -->
             <div class="content-services__service">
-              <img class="content-service__image" src="./resources/images/icons/research.svg" alt="Marketing icon" />
-              <span class="content-service__text">Research</span>
+              <img class="content-service__image" src="./resources/images/icons/databases.svg" alt="Marketing icon" />
+              <span class="content-service__text">Databases</span>
               <ul class="extended-services">
-                <li class="extended-services__service">SEO</li>
-                <li class="extended-services__service">Linear</li>
-                <li class="extended-services__service">Public</li>
-                <li class="extended-services__service">Comercial</li>
+                <li class="extended-services__service">MySQL</li>
+                <li class="extended-services__service">MongooDB</li>
+                <li class="extended-services__service">SQLlite</li>
+                <li class="extended-services__service">PostgreSQL</li>
               </ul>
             </div>
+            <!-- marketing -->
+            <div class="content-services__service">
+                <img class="content-service__image" src="./resources/images/icons/marketing.svg" alt="Marketing icon" />
+                <span class="content-service__text">Marketing</span>
+                <ul class="extended-services">
+                  <li class="extended-services__service">SEO</li>
+                  <li class="extended-services__service">Google business</li>
+                  <li class="extended-services__service">Facebook ADS</li>
+                  <li class="extended-services__service">Google ADWords</li>
+                </ul>
+            </div>
+          
+
           </div>
-          <button class="content-section__button button button--secondary" id="button_offers">VIEW ALL SERVICES</button>
+          <button class="content-section__button button button--secondary" id="button_offers">VIEW ALL SKILLS</button>
         </div>
+        <!-- третя сцена -->
         <div class="content-section section--hidden content-section--left-align" data-page="3">
           <div class="content-holder--left-align">
-            <h1 class="content-section__title">MEET THE TEAM</h1>
-            <p class="content-section__text text-indent content-section__text-team">Companies can't survive without smart people running them. We have some of the most highly passionate individuals with a vision for your success. Not all heroes wear capes. Check out the people of tomorrow today.</p>
-            <button class="content-section__button button button--secondary" id="button_team">VIEW TEAM</button>
+            <h1 class="content-section__title">
+              My experience
+            </h1>
+            <p class="content-section__text text-indent content-section__text-team">
+              My skills and abilities in the didgital field are very diverse.
+            </p>
+            <button class="content-section__button button button--secondary" id="button_team">
+              VIEW experience
+            </button>
           </div>
           <div class="content-section__images">
             <div class="content-section__image-holder">
@@ -315,20 +342,31 @@
             </div>
           </div>
         </div>
+        <!-- четверта сцена -->
         <div class="content-section section--hidden" data-page="4">
-          <h1 class="content-section__title">PORTFOLIO</h1>
-          <p class="content-section__text">We are proud of our work. With over 200 happy customers we are eager to show you the art that we produce. Check out our portfolio below.</p>
+          <h1 class="content-section__title">
+            PORTFOLIO
+          </h1>
+          <p class="content-section__text">
+            We are proud of our work. With over 200 happy customers we are eager to show you the art that we produce. Check out our portfolio below.
+          </p>
           <div class="content-portfolio__images flex">
             <div class="content-portfolio__image-holder">
-              <span class="content-portfolio__name text-indent">Mobile Design</span>
+              <span class="content-portfolio__name text-indent">
+                Mobile Design
+              </span>
               <img class="content-portfolio__image" src="./resources/images/portfolio/portfolio1.jpg" alt="Portfolio image" />
             </div>
             <div class="content-portfolio__image-holder">
-              <span class="content-portfolio__name text-indent">Web Design</span>
+              <span class="content-portfolio__name text-indent">
+                Web Design
+              </span>
               <img class="content-portfolio__image" src="./resources/images/portfolio/portfolio2.jpg" alt="Portfolio image" />
             </div>
             <div class="content-portfolio__image-holder">
-              <span class="content-portfolio__name text-indent">Advanced Animations</span>
+              <span class="content-portfolio__name text-indent">
+                Advanced Animations
+              </span>
               <img class="content-portfolio__image" src="./resources/images/portfolio/portfolio3.jpg" alt="Portfolio image" />
             </div>
           </div>
@@ -337,8 +375,11 @@
             <img class="button__image" src="./resources/images/icons/external.svg" alt="External icon"/>
           </a>
         </div>
+        <!-- п'ята сцена -->
         <div class="content-section section--hidden" data-page="5">
-          <h1 class="content-section__title">CONTACT US</h1>
+          <h1 class="content-section__title">
+            CONTACT US
+          </h1>
           <p class="content-section__text">text</p>
           <div class="content-section__buttons-holder">
             <a class="content-section__button button button--icon" href="mailto:alexturik@gmail.com">
@@ -354,7 +395,7 @@
         </div>
       </div>
     </main>
-
+<!-- підключаємо js з типом модуль -->
     <script type="module" src="./main.js"></script>
 	</body>
 </html>

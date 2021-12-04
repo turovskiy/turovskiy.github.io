@@ -99,6 +99,7 @@ canvas {
 
 .emphasize {
   font-weight: bold;
+  text-align: justify;
 }
 
 .flex {
@@ -677,6 +678,9 @@ iframe {
 }
 .content-services__service:nth-of-type(4) {
   transition-delay: 1s;
+}
+.content-services__service:nth-of-type(5) {
+  transition-delay: 1200ms;
 }
 
 .content-services__service:hover::before {
