@@ -498,6 +498,15 @@ iframe {
 .scroll-letters__letter:nth-of-type(6) {
   animation-delay: 600ms;
 }
+.scroll-letters__letter:nth-of-type(7) {
+  animation-delay: 700ms;
+}
+.scroll-letters__letter:nth-of-type(8) {
+  animation-delay: 800ms;
+}
+.scroll-letters__letter:nth-of-type(9) {
+  animation-delay: 900ms;
+}
 
 @keyframes scrollLetterDrops {
   25%, 100% { transform: translate3d(0, 100%, 0); }
