@@ -31,7 +31,7 @@
 
 :root {
   --primaryColor: #002aff;
-  --primaryBoldColor: #af0202;
+  --primaryBoldColor: #8bd4ff;
   --primaryBlackColor: #190eb6;
   --secondaryColor: #ffffff;
   --opaqueBackground: #000000e6;
@@ -63,8 +63,8 @@ li {
   text-align: left;
 }
 li::before {
-  content: "•";
-  /* color: var(--primaryColor); */
+  content: "✔";
+  color: var(--secondaryColor);
   display: inline-block; 
   width: 15px;
   margin-left: -1em;
@@ -110,7 +110,7 @@ canvas {
   align-items: center;
 }
 
-/***** LOADED PAGE ANIMATIONS *****/
+/*****Анімації завантаженої сторінки *****/
 .ui-wrapper.page-not-loaded .loader {
   animation: none;
 }
@@ -293,7 +293,7 @@ canvas {
 }
 
 .popup__offer {
-  flex-basis: 25%;
+  flex-basis: 50%;
 }
 
 .popup__offer-title {
