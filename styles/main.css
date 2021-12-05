@@ -131,7 +131,7 @@ canvas {
   height: 100%;
   background-color: var(--mainCanvasBackground);
   z-index: 2;
-  animation: loaderFinished 3s 3s forwards;
+  animation: loaderFinished 2s 2s forwards;
 }
 
 .loader__text {
@@ -608,7 +608,7 @@ iframe {
   width: 70%;
   color: var(--secondaryColor);
   font: 600 20px Roboto, sans-serif;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   transform: translate3d(0, 0, 0);
   transition: var(--contentTransitionDuration) 500ms var(--contentTransitionBezier);
 }
